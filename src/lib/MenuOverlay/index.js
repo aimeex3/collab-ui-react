@@ -15,7 +15,7 @@ class MenuOverlay extends React.Component {
   static childContextTypes = {
     onSelect: PropTypes.func,
   };
-  
+
   state = {
     isOpen: false,
   };
@@ -25,11 +25,11 @@ class MenuOverlay extends React.Component {
       onSelect: this.onSelect,
     };
   };
-  
+
   componentWillMount () {
     this.verifyChildren();
   }
-  
+
   verifyChildren = () => {
     const { children } = this.props;
     const status = React.Children.toArray(children).reduce((status, child) => {
@@ -63,6 +63,7 @@ class MenuOverlay extends React.Component {
       children,
       className,
       menuTrigger,
+      childrenWrapperClassName,
       showArrow,
       ...props
     } = this.props;
@@ -93,7 +94,14 @@ class MenuOverlay extends React.Component {
           showArrow={showArrow}
           {...otherProps}
         >
-          {children}
+          <div
+            className={
+              'cui-menu-overlay-children-wrapper' +
+              `${(childrenWrapperClassName && ` ${childrenWrapperClassName}`) || ''}`
+            }
+          >
+            {children}
+          </div>
         </EventOverlay>
       </div>
     );
@@ -105,6 +113,7 @@ MenuOverlay.propTypes = {
   className: PropTypes.string,
   menuTrigger: PropTypes.element.isRequired,
   onSelect: PropTypes.func,
+  childrenWrapperClassName: PropTypes.string,
   showArrow: PropTypes.bool,
 };
 
@@ -112,6 +121,7 @@ MenuOverlay.defaultProps = {
   children: null,
   className: '',
   onSelect: null,
+  childrenWrapperClassName: '',
   showArrow: true,
 };
 
@@ -127,7 +137,7 @@ export default MenuOverlay;
 * @js
 *
 
-import { 
+import {
   Button,
   Icon,
   ListItemSection,
@@ -143,7 +153,7 @@ export default class MenuOverlayDefault extends React.PureComponent {
       <div className='row'>
 
         <div className="docs-example docs-example--spacing">
-          <MenuOverlay 
+          <MenuOverlay
             menuTrigger={
               <Button ariaLabel='Show Menu'>Show Menu</Button>
             }
@@ -175,10 +185,10 @@ export default class MenuOverlayDefault extends React.PureComponent {
 
         <div className="docs-example docs-example--spacing">
 
-          <h3> 
+          <h3>
             <p><code className="small">direction=(top-center)</code></p>
           </h3>
-          <MenuOverlay 
+          <MenuOverlay
             menuTrigger={
               <Button ariaLabel='Show Custom Menu'>Show Customized MenuItems</Button>
             }

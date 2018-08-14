@@ -26,6 +26,14 @@ describe('tests for <MenuOverlay />', () => {
     expect(wrapper.find('.cui-menu-overlay-wrapper').hasClass('test')).toEqual(true);
   });
 
+  it('should apply childrenWrapperClassName to MenuOverlay', () => {
+    const wrapper = mount(
+      <MenuOverlay childrenWrapperClassName="test-overlay" menuTrigger={<div className="trigger">Trigger</div>}/>
+    );
+    wrapper.find('.trigger').simulate('click');
+    expect(wrapper.find('.cui-menu-overlay-children-wrapper').hasClass('test-overlay')).toEqual(true);
+  });
+
   it('should open the menu on Click of button', () => {
     const wrapper = mount(
       <MenuOverlay menuTrigger={<div className="trigger">Trigger</div>}>

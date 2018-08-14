@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { omit } from 'lodash';
 import {
   EventOverlay,
-  Icon, 
+  Icon,
   ListItem,
 } from '@collab-ui/react/';
 
@@ -73,6 +73,7 @@ class SubMenu extends React.Component {
       isOpen,
       label,
       selectedValue,
+      subMenuClassName,
       ...props
     } = this.props;
 
@@ -103,7 +104,7 @@ class SubMenu extends React.Component {
           {...otherProps}
         >
           {
-            customNode 
+            customNode
               ? customNode
               : ([
                 <div className='cui-menu-item__content' key='content-0'>
@@ -129,7 +130,10 @@ class SubMenu extends React.Component {
             <div
               aria-label={label}
               role='menu'
-              className='cui-menu-item-container'
+              className={
+                'cui-menu-item-container' +
+                `${(subMenuClassName && ` ${subMenuClassName}`) || ''}`
+              }
             >
               {children}
             </div>
@@ -149,7 +153,7 @@ SubMenu.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   content: PropTypes.element,
-  customNode: PropTypes.node, 
+  customNode: PropTypes.node,
   index: PropTypes.array,
   isHeader: PropTypes.bool,
   isOpen: PropTypes.bool,
@@ -157,6 +161,7 @@ SubMenu.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
   selectedValue: PropTypes.string,
+  subMenuClassName: PropTypes.string,
 };
 
 SubMenu.defaultProps = {
@@ -170,6 +175,7 @@ SubMenu.defaultProps = {
   label: '',
   onClick: null,
   selectedValue: '',
+  subMenuClassName: '',
 };
 
 export default SubMenu;
