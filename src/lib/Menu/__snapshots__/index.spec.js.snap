@@ -15,6 +15,7 @@ ShallowWrapper {
       keepMenuOpen={false}
       label="one"
       onClick={null}
+      value=""
     />
   </Menu>,
   Symbol(enzyme.__renderer__): Object {
@@ -44,6 +45,7 @@ ShallowWrapper {
           keepMenuOpen={false}
           label="one"
           onClick={null}
+          value=""
         />,
       ],
       "className": "cui-menu cui-menu-item-container",
@@ -67,6 +69,7 @@ ShallowWrapper {
           "keepMenuOpen": false,
           "label": "one",
           "onClick": null,
+          "value": "",
         },
         "ref": null,
         "rendered": null,
@@ -96,6 +99,7 @@ ShallowWrapper {
             keepMenuOpen={false}
             label="one"
             onClick={null}
+            value=""
           />,
         ],
         "className": "cui-menu cui-menu-item-container",
@@ -119,6 +123,7 @@ ShallowWrapper {
             "keepMenuOpen": false,
             "label": "one",
             "onClick": null,
+            "value": "",
           },
           "ref": null,
           "rendered": null,
