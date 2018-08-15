@@ -2,7 +2,6 @@
 
 exports[`tests for <AlertCall /> should match SnapShot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AlertCall
     avatar={null}
@@ -53,6 +52,7 @@ ShallowWrapper {
             className={null}
             color=""
             failureBadge={false}
+            hasNotification={false}
             hideDefaultTooltip={false}
             icon={null}
             isOverview={false}
@@ -181,6 +181,7 @@ ShallowWrapper {
               className={null}
               color=""
               failureBadge={false}
+              hasNotification={false}
               hideDefaultTooltip={false}
               icon={null}
               isOverview={false}
@@ -217,6 +218,7 @@ ShallowWrapper {
               "className": null,
               "color": "",
               "failureBadge": false,
+              "hasNotification": false,
               "hideDefaultTooltip": false,
               "icon": null,
               "isOverview": false,
@@ -498,6 +500,7 @@ ShallowWrapper {
               className={null}
               color=""
               failureBadge={false}
+              hasNotification={false}
               hideDefaultTooltip={false}
               icon={null}
               isOverview={false}
@@ -626,6 +629,7 @@ ShallowWrapper {
                 className={null}
                 color=""
                 failureBadge={false}
+                hasNotification={false}
                 hideDefaultTooltip={false}
                 icon={null}
                 isOverview={false}
@@ -662,6 +666,7 @@ ShallowWrapper {
                 "className": null,
                 "color": "",
                 "failureBadge": false,
+                "hasNotification": false,
                 "hideDefaultTooltip": false,
                 "icon": null,
                 "isOverview": false,
@@ -933,6 +938,8 @@ ShallowWrapper {
         "supportPrevContextArgumentOfComponentDidUpdate": true,
       },
     },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
   },
 }
 `;
